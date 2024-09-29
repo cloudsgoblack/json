@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <title>JSON-esimerkki</title>
+    <meta charset="utf-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="json.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="kurssi.html">kurssi.html</a></li>
+            <li><a href="toteutus.html">toteutus.html</a></li>
+            <li><a href="tapahtumat.html">tapahtumat.html</a></li>
+            <li><a href="saa.html">saa.html</a></li>
+            <li><a href="liikennekamera.html">liikennekamera.html</a></li>
+            <li><a href="junat.html">junat.html</a></li>
+        </ul>
+    </nav>
+    
+    <div class="sisalto">
+    <div id="vastaus">
+        <script>
+
+            fetch('toteutus.json')
+                .then(function (response) {
+                    return response.json();
+                })
+
+                .then(function (toteutusdata) {
+                    kerro(toteutusdata);
+                })
+
+                .catch(function (error) {
+                    document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
+                })
+
+                function kerro(toteutusdata) {
+                var teksti = "";
+                teksti = "<h1>" + toteutusdata.toteutus + "</h1>";
+                teksti += "<p><img src='" + toteutusdata.kuva + "' alt='kuva'></p>";
+                teksti += "<b>Osallistujien määrä: </b>" + toteutusdata.osallistujalkm;
+                teksti += "<br><b>Toteutuksen<br> aloitus: </b>" + toteutusdata.kesto.alku + "<b> lopetus</b>: " + toteutusdata.kesto.loppu + "<br>";
+                teksti += "<i>Kesto </i>" + toteutusdata.kesto.viikot + "<i> viikkoa</i><br>";
+
+                teksti += "<h3>Opiskelijoiden tiedot</h3>";
+                
+                teksti += "<ul>"
+                    for (var i =0; i < toteutusdata.osallistujat.length; i++) {
+                        teksti += "<li><b>Nimi:</b> " + toteutusdata.osallistujat[i].nimi + " <b>Opiskelijanumero:</b> " + toteutusdata.osallistujat[i].opiskelijanumero + "</li>";
+                    }
+                teksti += "</ul>";
+                
+                document.getElementById("vastaus").innerHTML = teksti;
+            }
+
+        </script>
+    </div></div>
+</body>
+
+</html>

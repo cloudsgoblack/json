@@ -1,0 +1,184 @@
+
+        body {
+            position: relative;
+            background-color: #fefbf9;
+        }
+
+        .sisalto {
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding-top: 20px;
+            padding-left: 12px;
+            padding-right: 12px;
+            text-align: justify;
+        }
+
+        h1 {
+            font-size: 20px;
+            font-family: Georgia;
+            font-style: italic;
+            color: #8a986f;
+        }
+
+        h2 {
+            font-size: 13px;
+            font-family: Arial;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #8a986f;
+        }
+
+        b {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #4a572a;
+        }
+
+        .sisalto a {
+            color: #4a572a;
+            background-color: #f1e9e2;
+            display: inline-block;
+            padding: 8px 20px;
+            cursor: default;
+            text-decoration: none;
+        }
+
+        .sisalto a:hover {
+            color: #fff;
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: #8a986f;
+            cursor: default;
+        }
+
+        .navbar-custom {
+            background-color: #f1e9e2;
+        }
+
+        .navbar-brand {
+            color: #6e5d4e;
+            cursor: default;
+        }
+
+        .nav-link {
+            color: #4a572a;
+            display: inline-block;
+            padding: 8px 20px;
+            cursor: default;
+            margin: auto;
+        }
+
+        .nav-link:hover {
+            color: #fff;
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: #8a986f;
+            cursor: default;
+        }
+
+        .nav-link.active {
+            color: #fff !important;
+            display: inline-block !important;
+            padding: 8px 20px;
+            background-color: #4a572a !important;
+            cursor: default;
+        }
+
+        .nav-item .dropdown-menu {
+            background: #f1e9e2;
+            border: #fff;
+            cursor: default;
+        }
+
+        .nav-item .dropdown-menu a:hover {
+            color: #fff;
+            background: #8a986f;
+            cursor: default;
+        }
+
+        .custom-toggler .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(74, 82, 59, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+        }
+
+        .custom-toggler.navbar-toggler {
+            border-color: #8a986f;
+        }
+
+        .carousel {
+            margin-top: 80px;
+        }
+
+        .col {
+            margin: -10px;
+        }
+
+        .card-body {
+            display: none;
+        }
+        
+        .card-body.active {
+            display: block;
+        }
+
+        .accordion-button {
+            background-color: #f1e9e2;
+            color:#8a986f;
+            font-size: 17px;
+            font-weight: bold;
+            font-family: Cambria;
+            letter-spacing: 2px;
+            cursor:default;
+        }
+
+        .accordion-button:hover {
+            background-color: #8a986f;
+            color:#4a572a;
+            font-size: 17px;
+            font-weight: bold;
+            font-family: Cambria;
+            letter-spacing: 2px;
+            cursor:default;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #8a986f;
+            color:#4a572a;
+            font-size: 17px;
+            font-weight: bold;
+            font-style: italic;
+            font-family: Cambria;
+            letter-spacing: 2px;
+            cursor:default;
+        }
+
+        .accordion-body {
+            background-color: #fefbf9;
+            cursor: default;
+
+        }
+
+        table {
+            border-collapse: none;
+          }
+          
+          td {
+            border: 2px dotted #f1e9e2;
+            background-color: #fefbf9;
+            font-size: 13px;
+            text-align: left;
+            padding: 5px;
+            width: 1000px;
+          }
+        
+          th {
+            border: 2px dotted #f1e9e2;
+            background-color: #f1e9e2;
+            color:#8a986f;
+            font-size: 15px;
+            font-weight: bold;
+            font-family: Cambria;
+            letter-spacing: 1px;
+            text-align: left;
+            padding: 5px;
+          }

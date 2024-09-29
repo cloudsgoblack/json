@@ -1,0 +1,36 @@
+{
+    "toteutus": "Digitekniikat",
+    "osallistujalkm": 6,
+    "kuva": "https://surunmurhaaja.kuvat.fi/kuvat/digitekniikat/digi2.png?img=full",
+    "kesto": {
+        "alku": "19.8.2024",
+        "loppu": "12.10.2024",
+        "viikot": 8
+    },
+    "osallistujat": [
+        {
+            "nimi": "Ellinoora Tammi",
+            "opiskelijanumero": "111333555"
+        },
+        {
+            "nimi": "Tamminoora Elli",
+            "opiskelijanumero": "111333666"
+        },
+        {
+            "nimi": "Matti Meikäläinen",
+            "opiskelijanumero": "111332555"
+        },
+        {
+            "nimi": "Maija Meikäläinen",
+            "opiskelijanumero": "111233555"
+        },
+        {
+            "nimi": "Joku Jokuinen",
+            "opiskelijanumero": "111337855"
+        },
+        {
+            "nimi": "Monni Monituinen",
+            "opiskelijanumero": "111333551"
+        }
+    ]
+}

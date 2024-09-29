@@ -1,0 +1,149 @@
+body {
+    position: relative;
+    background-color: #f1e9e2;
+    font-family: Calibri, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+.sisalto {
+    max-width: 500px;
+    margin: auto;
+    background-color: #fff;
+    padding-top: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 20px;
+    font-family: Georgia Light;
+    font-style: italic;
+    letter-spacing: 1px;
+    color: #8a986f;
+}
+
+h2 {
+    font-size: 17px;
+    font-family: Arial;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #8a986f;
+}
+
+h3 {
+    font-size: 15px;
+    font-family: Cambria Light;
+    font-style: italic;
+    letter-spacing: 1px;
+    color: #4a572a;
+    background-color: #f1e9e2;
+    padding: 4px;
+    border: 2px dotted #8a986f;
+}
+
+b {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #8a986f;
+}
+
+i {
+    font-size: 12px;
+    font-family: Georgia Light;
+    color: #4a572a;
+    letter-spacing: 1px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sisalto a {
+    color: #4a572a;
+    display: inline-block;
+    padding: 2px 8px;
+    cursor: default;
+    text-decoration: none;
+}
+
+.sisalto a:hover {
+    color: #fff;
+    display: inline-block;
+    padding: 2px 8px;
+    background-color: #8a986f;
+    cursor: default;
+}
+
+nav {
+    background-color: #8a986f;
+    margin: auto;
+    padding-top: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 10px;
+    overflow: hidden;
+    font-family: Cambria Light;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav a {
+    color: #f1e9e2;
+    display: inline-block;
+    padding: 8px 20px;
+    cursor: default;
+    margin: auto;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: #4a572a;
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #f1e9e2;
+    cursor: default;
+    text-transform: uppercase;
+}
+
+.nav a.active {
+    color: #fff !important;
+    display: inline-block !important;
+    padding: 8px 20px;
+    background-color: #4a572a !important;
+    cursor: default;
+    text-transform: uppercase;
+}
+
+table {
+    border-collapse: none;
+}
+
+td {
+    border: 3px dotted #f1e9e2;
+    background-color: #fefbf9;
+    padding: 5px;
+    width: 500px;
+}
+
+hr {
+    background-color: #f1e9e2;
+    border: 1px dotted #4a572a;
+    height: 2px;
+    margin: 15px 0 10px 0;
+}

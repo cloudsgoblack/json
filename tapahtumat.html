@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <title>JSON-esimerkki</title>
+    <meta charset="utf-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="json.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="kurssi.html">kurssi.html</a></li>
+            <li><a href="toteutus.html">toteutus.html</a></li>
+            <li><a href="tapahtumat.html">tapahtumat.html</a></li>
+            <li><a href="saa.html">saa.html</a></li>
+            <li><a href="liikennekamera.html">liikennekamera.html</a></li>
+            <li><a href="junat.html">junat.html</a></li>
+        </ul>
+    </nav>
+    
+    <div class="sisalto">
+    <div id="vastaus">
+        <script>
+
+            fetch('https://api.visittampere.com/api/v1/visittampere/event/published/all/?for mat=json&lang=fi')
+                .then(function (response) {
+                    return response.json();
+                })
+
+                .then(function(data){
+                    tapahtumat(data);
+                })
+
+                .catch(function (error) {
+                    document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
+                })
+
+                function tapahtumat(data) {
+                var teksti = "";
+                teksti = "<h1>Tampereella tapahtuu</h1>";
+
+                for (var i = 0; i < data.length; i++) {
+                    teksti += "<p><h3>" + data[i].title + "</h3></p>";
+                    teksti += "<p>" + data[i].description + "</p>";
+                    teksti += "<p><a href=" + data[i].url + ">" + "Linkki tapahtumaan" + "</a></p>";
+                }
+                
+                document.getElementById("vastaus").innerHTML = teksti;
+            }
+        </script>
+        
+    </div></div>
+</body>
+
+</html>

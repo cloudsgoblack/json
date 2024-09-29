@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <title>JSON-esimerkki</title>
+    <meta charset="utf-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="json.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="kurssi.html">kurssi.html</a></li>
+            <li><a href="toteutus.html">toteutus.html</a></li>
+            <li><a href="tapahtumat.html">tapahtumat.html</a></li>
+            <li><a href="saa.html">saa.html</a></li>
+            <li><a href="liikennekamera.html">liikennekamera.html</a></li>
+            <li><a href="junat.html">junat.html</a></li>
+        </ul>
+    </nav>
+    
+    <div class="sisalto">
+
+        <h1>Autolla Tampereelle</h1>
+        <p>Minkälainen sää siellä on?</p>
+
+    <div id="vastaus">
+        <script>
+
+            fetch('https://tie.digitraffic.fi/api/weathercam/v1/stations/C04507/history')
+                .then(function (response) {
+                    return response.json();
+                })
+
+                .then(function (data) {
+                    hae(data);
+                })
+
+                .catch(function (error) {
+                    document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
+                })
+
+                function hae(data) {
+                var teksti = "";
+                var kuva = data.presets[0].history;
+                
+                for (var i = 0; i < kuva.length; i++) {
+                    var url = kuva[i].imageUrl;
+                    var pvm = kuva[i].lastModified;
+                    var tunnit = pvm.substring(11,13);
+                    var minuutit = pvm.substring(14,16);
+                    var aika = pvm.substring(0,10) + " kello " + tunnit + ":" + minuutit;
+                    teksti += "<p><b>Kuvanottoaika:</b> " + aika + "</p>";
+                    teksti += "<img src='" + url + "' alt='kuva' style='width: 490px;'>";
+                }
+                document.getElementById("vastaus").innerHTML = teksti;
+            }
+
+        </script>
+    </div></div>
+</body>
+
+</html>

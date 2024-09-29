@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <title>JSON-esimerkki</title>
+    <meta charset="utf-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="json.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="kurssi.html">kurssi.html</a></li>
+            <li><a href="toteutus.html">toteutus.html</a></li>
+            <li><a href="tapahtumat.html">tapahtumat.html</a></li>
+            <li><a href="saa.html">saa.html</a></li>
+            <li><a href="liikennekamera.html">liikennekamera.html</a></li>
+            <li><a href="junat.html">junat.html</a></li>
+        </ul>
+    </nav>
+
+    <div class="sisalto">
+        <h1>Sää - siitä aina on jotain kerrottavaa</h1>
+        <p>Millainen sää Helsingissä on? Entä Tampereella?</p>
+
+        <table>
+            <td>
+                <div id="helsinki"></div>
+            </td>
+            <td>
+                <div id="tampere"></div>
+            </td>
+        </table>
+    </div>
+
+    <script>
+        fetch('https://api.openweathermap.org/data/2.5/weather?lang=fi&q=helsinki&units=metric&APPID=665ecd56dfc08dbb50feb8b8f5034e28')
+            .then(function (response) {
+                return response.json();
+            })
+
+            .then(function (data) {
+                saa('helsinki', data);
+            })
+
+            .catch(function (error) {
+                document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
+            })
+
+        fetch('https://api.openweathermap.org/data/2.5/weather?lang=fi&q=tampere&units=metric&APPID=665ecd56dfc08dbb50feb8b8f5034e28')
+            .then(function (response) {
+                return response.json();
+            })
+
+            .then(function (data) {
+                saa('tampere', data);
+            })
+
+            .catch(function (error) {
+                document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
+            })
+
+        function saa(kaupunki, data) {
+            var teksti = "";
+            var kuvaus = data.weather[0].description;
+            var kuva = 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
+
+            teksti = "<h1>" + data.name + "</h1>";
+            teksti += "<i>" + kuvaus.charAt(0).toUpperCase() + kuvaus.slice(1) + ".</i>";
+            teksti += "<br><b>Lämpötila: </b>" + data.main.temp + " &degC";
+            teksti += "<br><b>Tuulen nopeus:</b> " + data.wind.speed;
+            teksti += "<br><img src='" + kuva + "' alt='kuva'>";
+
+            document.getElementById(kaupunki).innerHTML = teksti;
+        }
+    </script>
+
+</body>
+
+</html>
